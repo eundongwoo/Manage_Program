@@ -10,12 +10,11 @@ public class Main extends Application {
 
 	static DBManager db;
 	
-	FXMLLoader loader;
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		loader=new FXMLLoader(getClass().getResource("Login.fxml"));
-		Parent p=loader.load();
+		Parent p=FXMLLoader.load(getClass().getResource("Login.fxml"));
 		primaryStage.setScene(new Scene(p));
 		primaryStage.setTitle("·Î±×ÀÎ");
 		primaryStage.show();
