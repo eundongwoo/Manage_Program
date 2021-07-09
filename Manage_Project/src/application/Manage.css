@@ -1,0 +1,19 @@
+*
+{
+	-fx-background-color: white;
+}
+
+Button
+{
+	-fx-border-radius: 20;
+	-fx-background-radius: 20;
+	
+}
+
+Button:pressed
+{
+	-fx-effect:innershadow(three-pass-box,rgba(0,0,0,0.7),10,0,5,5); 
+	-fx-border-color: red;
+	-fx-border-width: 3px;
+	
+}

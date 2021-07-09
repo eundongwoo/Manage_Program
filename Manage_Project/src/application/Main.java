@@ -16,11 +16,11 @@ public class Main extends Application {
 		// TODO Auto-generated method stub
 		Parent p=FXMLLoader.load(getClass().getResource("Login.fxml"));
 		primaryStage.setScene(new Scene(p));
-		primaryStage.setTitle("로그인");
+		primaryStage.setTitle("직원 관리 프로그램");
 		primaryStage.show();
 		
 	}
-	// main ssdfsdfdagrfwtgresdfsader
+
 	public static void main(String[] args) {
 		db=new DBManager();
 		launch(args);
