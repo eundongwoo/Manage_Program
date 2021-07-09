@@ -20,7 +20,7 @@ public class Main extends Application {
 		primaryStage.show();
 		
 	}
-	// main
+	// main ssdfsdfdagrfwtgresdfsader
 	public static void main(String[] args) {
 		db=new DBManager();
 		launch(args);
