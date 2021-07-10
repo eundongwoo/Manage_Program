@@ -82,18 +82,18 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <RadioButton layoutX="102.0" layoutY="26.0" mnemonicParsing="false" text="남자" />
-            <RadioButton layoutX="235.0" layoutY="26.0" mnemonicParsing="false" text="여자" />
+            <RadioButton fx:id="man" layoutX="102.0" layoutY="26.0" mnemonicParsing="false" text="남자" />
+            <RadioButton fx:id="woman" layoutX="235.0" layoutY="26.0" mnemonicParsing="false" text="여자" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
-            <TextField layoutX="25.0" layoutY="11.0" prefHeight="50.0" prefWidth="341.0" />
+            <TextField fx:id="name" layoutX="25.0" layoutY="11.0" prefHeight="50.0" prefWidth="341.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <TextField layoutX="25.0" layoutY="9.0" prefHeight="50.0" prefWidth="281.0" />
+            <TextField fx:id="salary" layoutX="25.0" layoutY="9.0" prefHeight="50.0" prefWidth="281.0" />
             <Label layoutX="330.0" layoutY="13.0" text="원">
                <font>
                   <Font size="36.0" />
@@ -103,17 +103,17 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <children>
-            <TextField layoutX="25.0" layoutY="9.0" prefHeight="50.0" prefWidth="341.0" />
+            <TextField fx:id="position" layoutX="25.0" layoutY="9.0" prefHeight="50.0" prefWidth="341.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <children>
-            <DatePicker layoutX="25.0" layoutY="8.0" prefHeight="50.0" prefWidth="341.0" />
+            <DatePicker fx:id="hiredate" layoutX="25.0" layoutY="8.0" prefHeight="50.0" prefWidth="341.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
          <children>
-            <TextField layoutX="25.0" layoutY="8.0" prefHeight="50.0" prefWidth="341.0" />
+            <TextField fx:id="dno" layoutX="25.0" layoutY="8.0" prefHeight="50.0" prefWidth="341.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
