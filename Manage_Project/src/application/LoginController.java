@@ -17,12 +17,12 @@ import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 
-	@FXML Hyperlink btn_register;
-	@FXML Button btn_login;
+	@FXML private Hyperlink btn_register;
+	@FXML private Button btn_login;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub  
 		//회원가입창으로 이동하는 코드
 		btn_register.setOnAction(e->{
 			try {
