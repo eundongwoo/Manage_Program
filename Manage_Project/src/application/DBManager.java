@@ -26,7 +26,7 @@ public class DBManager {
 		}
 		
 	}
-	
+	//직원 등록 코드
 	public void worker_insert(Worker worker)
 	{
 		String sql="insert into worker(eno,ename,gender,salary,position,hiredate,dno) values(worker_aaa.NEXTVAL,?,?,?,?,?,?)";
@@ -46,6 +46,33 @@ public class DBManager {
 			e.printStackTrace();
 		}
 	}
+	//직원 수정 코드
+	public void worker_update(String condition,String newData,String eno)
+	{
+		String sql="update worker set "+condition+"= ? where eno=?";
+		try {
+				if(condition.equals("dno"))
+				{
+					PreparedStatement prst=con.prepareStatement(sql);
+					prst.setInt(1, Integer.parseInt(newData));
+					prst.setInt(2, Integer.parseInt(eno));
+					prst.executeUpdate();
+					
+				}else
+				{
+					PreparedStatement prst=con.prepareStatement(sql);
+					prst.setString(1, newData);
+					prst.setInt(2, Integer.parseInt(eno));
+					prst.executeUpdate();
+					
+				}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void Register_insert(Worker worker) {
 		String sql = "insert into worker(eno, password, ename, position, dno) VALUES(worker_aaa.NEXTVAL, ?,?, ?, 2)";
 		try {
@@ -59,13 +86,6 @@ public class DBManager {
 			e.printStackTrace();
 		}
 	}
-	
 
-
-	
-
-	
-	
-	
 	
 }

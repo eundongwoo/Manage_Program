@@ -45,5 +45,25 @@ public class CrudController implements Initializable {
 			e.printStackTrace();
 		}
 	}
+	
+	public void handleBtnUpdate()
+	{
+		try {
+			Parent update=FXMLLoader.load(getClass().getResource("Worker_Update.fxml"));
+			StackPane root=(StackPane)btn_update.getScene().getRoot();
+			root.getChildren().add(update);
+			
+			update.setTranslateX(350);
+			
+			Timeline timeline=new Timeline();
+			KeyValue keyvalue=new KeyValue(update.translateXProperty(), 0);
+			KeyFrame keyframe=new KeyFrame(Duration.millis(800), keyvalue);
+			timeline.getKeyFrames().add(keyframe);
+			timeline.play();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
