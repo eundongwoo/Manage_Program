@@ -17,7 +17,8 @@ import javafx.util.Duration;
 
 public class CrudController implements Initializable {
 
-	@FXML private Button btn_insert;
+	@FXML private Button btn_insert,btn_update;
+
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

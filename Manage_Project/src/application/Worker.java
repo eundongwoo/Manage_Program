@@ -14,6 +14,7 @@ public class Worker {
 	public Worker() {
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	public Worker(String name, String gender, int salary,String position,Date hiredate, String dno) {
 		this.name = name;
