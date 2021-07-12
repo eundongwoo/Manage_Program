@@ -24,6 +24,11 @@ public class Worker {
 		this.salary = salary;
 		this.hiredate = hiredate;
 	}
+	public Worker(String password,String name, String position) {
+		this.name = name;
+		this.position = position;
+		this.password = password;
+	}
 
 	public String getName() {
 		return name;
