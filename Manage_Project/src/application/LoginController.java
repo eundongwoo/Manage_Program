@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
@@ -19,6 +20,9 @@ public class LoginController implements Initializable {
 
 	@FXML private Hyperlink btn_register;
 	@FXML private Button btn_login;
+	@FXML private TextField loginid;
+	@FXML private TextField loginpass;
+	
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
