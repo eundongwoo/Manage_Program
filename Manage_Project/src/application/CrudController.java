@@ -17,7 +17,7 @@ import javafx.util.Duration;
 
 public class CrudController implements Initializable {
 
-	@FXML private Button btn_insert,btn_update;
+	@FXML private Button btn_insert,btn_update,btn_delete;
 
 	
 	@Override
@@ -57,6 +57,26 @@ public class CrudController implements Initializable {
 			
 			Timeline timeline=new Timeline();
 			KeyValue keyvalue=new KeyValue(update.translateXProperty(), 0);
+			KeyFrame keyframe=new KeyFrame(Duration.millis(800), keyvalue);
+			timeline.getKeyFrames().add(keyframe);
+			timeline.play();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void handleBtnDelete()
+	{
+		try {
+			Parent delete=FXMLLoader.load(getClass().getResource("Worker_Delete.fxml"));
+			StackPane root=(StackPane)btn_delete.getScene().getRoot();
+			root.getChildren().add(delete);
+			
+			delete.setTranslateX(350);
+			
+			Timeline timeline=new Timeline();
+			KeyValue keyvalue=new KeyValue(delete.translateXProperty(), 0);
 			KeyFrame keyframe=new KeyFrame(Duration.millis(800), keyvalue);
 			timeline.getKeyFrames().add(keyframe);
 			timeline.play();

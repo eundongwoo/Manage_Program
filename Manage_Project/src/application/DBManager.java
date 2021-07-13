@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DBManager {
@@ -14,6 +16,7 @@ public class DBManager {
 	private String user="hr";
 	private String pwd="1234";
 	Connection con;
+	List<Integer> list=new ArrayList<>(); //회원 테이블에 있는 eno를 담는 리스트
 	
 	public DBManager() {
 		// TODO Auto-generated constructor stub
@@ -76,8 +79,43 @@ public class DBManager {
 		}
 	}
 	
+	//관리자가 아닌 회원들의 eno를 얻는 메서드
+	public List<Integer> take_eno()
+	{
+		String sql="select eno from worker where position <> '관리자'";
+		
+		try {
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery(sql);
+			while(rs.next())
+			{
+				list.add(rs.getInt(1));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public void worker_delete(int eno)
+	{
+		String sql="delete from worker where eno=?";
+		try {
+			PreparedStatement prst=con.prepareStatement(sql);
+			prst.setInt(1, eno);
+			prst.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public void Register_insert(Worker worker) {
-		String sql = "insert into worker(eno, password, ename, position, dno) VALUES(worker_aaa.NEXTVAL, ?,?, ?, 2)";
+		String sql = "insert into worker(eno, password, ename, position, dno) VALUES(worker_aaa.NEXTVAL, ?,?, ?, 3)";
 		try {
 			PreparedStatement prst=con.prepareStatement(sql);
 			prst.setInt(1, Integer.parseInt(worker.getPassword()));

@@ -16,10 +16,16 @@
                   <Image url="@images/insert.png" />
                </image>
             </ImageView>
-            <Button fx:id="btn_update" onAction="#handleBtnUpdate" layoutX="185.0" layoutY="139.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="115.0" />
+            <Button fx:id="btn_update" layoutX="185.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBtnUpdate" prefHeight="106.0" prefWidth="115.0" />
             <ImageView fitHeight="74.0" fitWidth="92.0" layoutX="206.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/update-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_delete" layoutX="328.0" layoutY="139.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="115.0" onAction="#handleBtnDelete" />
+            <ImageView fitHeight="74.0" fitWidth="89.0" layoutX="349.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/delete-removebg-preview.png" />
                </image>
             </ImageView>
          </children>
