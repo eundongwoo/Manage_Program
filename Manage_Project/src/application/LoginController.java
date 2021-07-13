@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.animation.AnimationTimer;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -42,20 +43,32 @@ public class LoginController implements Initializable {
 			}
 		});
 		
+		
 		//메인 관리창으로 이동하는 코드
 		btn_login.setOnAction(e->{
+			
 			Parent register;
-			try {
-				register = FXMLLoader.load(getClass().getResource("Manage.fxml"));
-				Scene scene=new Scene(register);
-				Stage primaryStage=(Stage)btn_register.getScene().getWindow();
-				primaryStage.setScene(scene);	
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+			Worker worker = new Worker(loginid.getText());
+			int pass = Main.db.Login(worker);
+			if(pass == Integer.parseInt(loginpass.getText()))
+			{
+				System.out.println("로그인 성공");
+				try {
+					register = FXMLLoader.load(getClass().getResource("Manage.fxml"));
+					Scene scene=new Scene(register);
+					Stage primaryStage=(Stage)btn_register.getScene().getWindow();
+					primaryStage.setScene(scene);	
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}else {
+				System.out.println("로그인 실패");
 			}
+			
 		});
 	
 	}
+	
 
 }

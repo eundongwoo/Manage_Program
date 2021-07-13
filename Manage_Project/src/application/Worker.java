@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class Worker {
 
-	private String name,gender,position,dno,password;
+	private String name,gender,position,dno,password,ID;
 	private int salary;
 	private Date hiredate;
 	
@@ -15,7 +15,9 @@ public class Worker {
 		// TODO Auto-generated constructor stub
 	}
 	
-
+	public Worker(String ID) {
+		this.ID = ID;
+	}
 	public Worker(String name, String gender, int salary,String position,Date hiredate, String dno) {
 		this.name = name;
 		this.gender = gender;
@@ -84,5 +86,15 @@ public class Worker {
 
 	public void setHiredate(Date hiredate) {
 		this.hiredate = hiredate;
+	}
+
+
+	public String getID() {
+		return ID;
+	}
+
+
+	public void setID(String ID) {
+		this.ID = ID;
 	}
 }

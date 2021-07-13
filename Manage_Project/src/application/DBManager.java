@@ -3,7 +3,10 @@ package application;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 
 public class DBManager {
 	
@@ -85,6 +88,22 @@ public class DBManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public int Login(Worker worker) {
+		int pass=0;
+		String sql = "select password from worker where eno = ?";
+		try {
+			PreparedStatement prst = con.prepareStatement(sql);
+			prst.setInt(1, Integer.parseInt(worker.getID()));
+			ResultSet rs = prst.executeQuery();
+			if(rs.next()) {	
+				pass = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return pass;
 	}
 
 	
