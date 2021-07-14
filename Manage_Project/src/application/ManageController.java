@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 public class ManageController implements Initializable {
 
 	@FXML private Button user_manage;
+	@FXML private Button job_manage;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -34,6 +35,22 @@ public class ManageController implements Initializable {
 				e1.printStackTrace();
 			}
 		});
+		
+		job_manage.setOnMouseClicked(e->{
+			try {
+				Parent jobcrud=FXMLLoader.load(getClass().getResource("JobCrud.fxml"));
+				Scene scene=new Scene(jobcrud);
+				Stage primaryStage=(Stage)user_manage.getScene().getWindow();
+				primaryStage.setScene(scene);
+				
+				
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
+		
+		
 	}
 
 }
