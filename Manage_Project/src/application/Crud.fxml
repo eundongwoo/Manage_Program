@@ -10,22 +10,28 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="btn_insert" layoutX="46.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBtnInsert" prefHeight="106.0" prefWidth="115.0" />
-            <ImageView fitHeight="74.0" fitWidth="84.0" layoutX="67.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="btn_insert" layoutX="26.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBtnInsert" prefHeight="106.0" prefWidth="115.0" />
+            <ImageView fitHeight="74.0" fitWidth="84.0" layoutX="47.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/insert.png" />
                </image>
             </ImageView>
-            <Button fx:id="btn_update" layoutX="185.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBtnUpdate" prefHeight="106.0" prefWidth="115.0" />
-            <ImageView fitHeight="74.0" fitWidth="92.0" layoutX="206.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="btn_update" layoutX="165.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBtnUpdate" prefHeight="106.0" prefWidth="115.0" />
+            <ImageView fitHeight="74.0" fitWidth="92.0" layoutX="186.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/update-removebg-preview.png" />
                </image>
             </ImageView>
-            <Button fx:id="btn_delete" layoutX="328.0" layoutY="139.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="115.0" onAction="#handleBtnDelete" />
-            <ImageView fitHeight="74.0" fitWidth="89.0" layoutX="349.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="btn_delete" layoutX="308.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleBtnDelete" prefHeight="106.0" prefWidth="115.0" />
+            <ImageView fitHeight="74.0" fitWidth="89.0" layoutX="329.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/delete-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_search" layoutX="452.0" layoutY="139.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="115.0" onAction="#handleBtnSearch"/>
+            <ImageView fitHeight="74.0" fitWidth="90.0" layoutX="473.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/search-removebg-preview.png" />
                </image>
             </ImageView>
          </children>
