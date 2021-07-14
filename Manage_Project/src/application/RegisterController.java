@@ -25,7 +25,7 @@ public class RegisterController implements Initializable{
 		
 	}
 	public void rgbuttonhandler(ActionEvent e) {
-		Worker worker = new Worker(rgpassword.getText(), rgename.getText(), rgposition.getText());
+		Worker worker = new Worker(rgpassword.getText(), rgename.getText());
 		Main.db.Register_insert(worker);
 		Parent register;
 		try {

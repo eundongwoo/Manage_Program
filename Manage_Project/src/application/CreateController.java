@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.time.Instant;
@@ -12,20 +13,25 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class CreateController implements Initializable {
 
 	@FXML private Button btn_insert;
+	@FXML private Button jobbtn_insert;
 	@FXML private GridPane create_form;
-	@FXML private TextField name,salary,position,dno;
+	@FXML private TextField name,salary,position,dno, jobname, location;
 	@FXML private RadioButton man,woman;
 	@FXML private DatePicker hiredate;
 	@Override
@@ -89,6 +95,35 @@ public class CreateController implements Initializable {
 		timeline.getKeyFrames().add(keyframe);
 		timeline.play();
 	
+	}
+	
+	public void whatthe(ActionEvent e) {
+		Parent register;
+		try {
+			register = FXMLLoader.load(getClass().getResource("Job_Create.fxml"));
+			Scene scene=new Scene(register);
+			Stage primaryStage=(Stage)jobbtn_insert.getScene().getWindow();
+			primaryStage.setScene(scene);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+	
+	public void jobhandleBtnInsert(ActionEvent e) {
+		Job job = new Job(jobname.getText(), location.getText());
+		Main.db.job_insert(job);
+		Parent register;
+		try {
+			register = FXMLLoader.load(getClass().getResource("JobCrud.fxml"));
+			Scene scene=new Scene(register);
+			Stage primaryStage=(Stage)jobbtn_insert.getScene().getWindow();
+			primaryStage.setScene(scene);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 	}
 
 }

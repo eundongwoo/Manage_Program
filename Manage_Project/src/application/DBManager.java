@@ -115,12 +115,11 @@ public class DBManager {
 	}
 	
 	public void Register_insert(Worker worker) {
-		String sql = "insert into worker(eno, password, ename, position, dno) VALUES(worker_aaa.NEXTVAL, ?,?, ?, 3)";
+		String sql = "insert into worker(eno, password, ename, position, dno) VALUES(worker_aaa.NEXTVAL, ?,?, '°ü¸®ÀÚ', 3)";
 		try {
 			PreparedStatement prst=con.prepareStatement(sql);
 			prst.setInt(1, Integer.parseInt(worker.getPassword()));
 			prst.setString(2, worker.getName());
-			prst.setString(3, worker.getPosition());
 			prst.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -142,6 +141,19 @@ public class DBManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}return pass;
+	}
+	
+	public void job_insert(Job job) {
+		String sql = "insert into dept VALUES(dept_aaa.NEXTVAL,?, ?)";
+		try {
+			PreparedStatement prst = con.prepareStatement(sql);
+			prst.setString(1, job.getDname());
+			prst.setString(2, job.getLocation());
+			prst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	
