@@ -6,18 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane id="background" stylesheets="@Create.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="application.SearchController" id="background" stylesheets="@Create.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="63.0" layoutY="56.0" mnemonicParsing="false" text="직원 조회" />
-      <TableView layoutX="36.0" layoutY="113.0" prefHeight="235.0" prefWidth="525.0">
+      <Button fx:id="btn_search" layoutX="63.0" layoutY="56.0" mnemonicParsing="false" text="직원 조회" onAction="#btn_search" />
+      <TableView fx:id="tableView" layoutX="36.0" layoutY="113.0" prefHeight="235.0" prefWidth="525.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="사원번호" />
-          <TableColumn prefWidth="75.0" text="이름" />
-            <TableColumn prefWidth="75.0" text="성별" />
-            <TableColumn prefWidth="75.0" text="연봉" />
-            <TableColumn prefWidth="75.0" text="직위" />
-            <TableColumn prefWidth="75.0" text="입사일" />
-            <TableColumn prefWidth="75.0" text="부서명" />
+          	<TableColumn fx:id="eno" prefWidth="75.0" text="사원번호" />
+          	<TableColumn fx:id="name" prefWidth="75.0" text="이름" />
+            <TableColumn fx:id="gender" prefWidth="75.0" text="성별" />
+            <TableColumn fx:id="salary" prefWidth="75.0" text="연봉" />
+            <TableColumn fx:id="position" prefWidth="75.0" text="직위" />
+            <TableColumn fx:id="hiredate" prefWidth="75.0" text="입사일" />
+            <TableColumn fx:id="dname" prefWidth="75.0" text="부서명" />
         </columns>
       </TableView>
    </children>
