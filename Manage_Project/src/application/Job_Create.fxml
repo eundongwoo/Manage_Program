@@ -32,36 +32,30 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label  layoutX="69.0" layoutY="13.0" text="부서 이름">
+            <Label layoutX="14.0" layoutY="8.0" text="부서 이름">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
-         <children>
-            <Label layoutX="35.0" layoutY="12.0" text="부서위치">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
             <TextField fx:id="jobname" layoutX="25.0" layoutY="11.0" prefHeight="50.0" prefWidth="341.0" promptText="부서이름" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-         <children>
-            <TextField fx:id="location" layoutX="25.0" layoutY="8.0" prefHeight="50.0" prefWidth="341.0" promptText="부서위치" />
-         </children>
-      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
          <children>
             <Button fx:id="jobbtn_insert" layoutX="31.0" layoutY="17.0" mnemonicParsing="false" onAction="#jobhandleBtnInsert" prefHeight="23.0" prefWidth="72.0" text="등록" />
          </children>
       </AnchorPane>
+      <Label text="부서위치" GridPane.rowIndex="4">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="location" prefHeight="50.0" prefWidth="341.0" promptText="부서위치" GridPane.columnIndex="1" GridPane.rowIndex="4" />
    </children>
 </GridPane>

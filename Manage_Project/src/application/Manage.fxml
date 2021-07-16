@@ -36,11 +36,11 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="job_manage" mnemonicParsing="false" text="Button">
+            <Button fx:id="job_manage" mnemonicParsing="false">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../Users/HP/Downloads/살찐보노보노2.png" />
+                        <Image url="@images\살찐보노보노2.png" />
                      </image>
                   </ImageView>
                </graphic>
