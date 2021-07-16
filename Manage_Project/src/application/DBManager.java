@@ -1,6 +1,7 @@
 package application;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +18,7 @@ public class DBManager {
 	private String pwd="1234";
 	Connection con;
 	List<Integer> list=new ArrayList<>(); //회원 테이블에 있는 eno를 담는 리스트
+	List<Worker> worker_list=new ArrayList<Worker>(); //회원을 담는 리스트
 	
 	public DBManager() {
 		// TODO Auto-generated constructor stub
@@ -97,6 +99,39 @@ public class DBManager {
 		}
 		
 		return list;
+	}
+	
+	public List<Worker> take_worker()
+	{
+		String sql="select eno,ename,gender,salary,position,hiredate,dname from worker natural join dept where position not like '%관리자%'";
+		try {
+			String name,gender,position,dname;
+			int eno,salary;
+			Date hiredate;
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery(sql);
+			while(rs.next())
+			{
+				eno=rs.getInt(1);
+				name=rs.getString(2);
+				gender=rs.getString(3);
+				salary=rs.getInt(4);
+				position=rs.getString(5);
+				hiredate=rs.getDate(6);
+				dname=rs.getString(7);
+				System.out.println(eno+"\t"+name+"\t"+gender+"\t"+salary+"\t"+position+"\t"+hiredate+"\t"+dname+"\t");
+				
+				Worker worker=new Worker(eno, name, gender, salary, position, hiredate, dname);
+				worker_list.add(worker);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return worker_list;
 	}
 	
 	public void worker_delete(int eno)

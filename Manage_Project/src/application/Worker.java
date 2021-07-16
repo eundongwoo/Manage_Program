@@ -7,8 +7,8 @@ import java.time.LocalDate;
 
 public class Worker {
 
-	private String name,gender,position,dno,password,ID;
-	private int salary;
+	private String name,gender,position,dno,password,ID,dname;
+	private int salary,eno;
 	private Date hiredate;
 	
 	public Worker() {
@@ -30,6 +30,35 @@ public class Worker {
 		this.name = name;
 		this.position = position;
 		this.password = password;
+	}
+	
+	public Worker(int eno,String name, String gender,int salary, String position, Date hiredate,String dname) {
+		
+		this.name = name;
+		this.gender = gender;
+		this.position = position;
+		this.dname = dname;
+		this.salary = salary;
+		this.eno = eno;
+		this.hiredate = hiredate;
+	}
+	
+	
+
+	public String getDname() {
+		return dname;
+	}
+
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+
+	public int getEno() {
+		return eno;
+	}
+
+	public void setEno(int eno) {
+		this.eno = eno;
 	}
 
 	public String getName() {

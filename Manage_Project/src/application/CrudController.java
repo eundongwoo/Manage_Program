@@ -17,7 +17,7 @@ import javafx.util.Duration;
 
 public class CrudController implements Initializable {
 
-	@FXML private Button btn_insert,btn_update,btn_delete;
+	@FXML private Button btn_insert,btn_update,btn_delete,btn_search;
 
 	
 	@Override
@@ -77,6 +77,26 @@ public class CrudController implements Initializable {
 			
 			Timeline timeline=new Timeline();
 			KeyValue keyvalue=new KeyValue(delete.translateXProperty(), 0);
+			KeyFrame keyframe=new KeyFrame(Duration.millis(800), keyvalue);
+			timeline.getKeyFrames().add(keyframe);
+			timeline.play();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void handleBtnSearch()
+	{
+		try {
+			Parent search=FXMLLoader.load(getClass().getResource("Worker_Search.fxml"));
+			StackPane root=(StackPane)btn_search.getScene().getRoot();
+			root.getChildren().add(search);
+			
+			search.setTranslateX(350);
+			
+			Timeline timeline=new Timeline();
+			KeyValue keyvalue=new KeyValue(search.translateXProperty(), 0);
 			KeyFrame keyframe=new KeyFrame(Duration.millis(800), keyvalue);
 			timeline.getKeyFrames().add(keyframe);
 			timeline.play();
