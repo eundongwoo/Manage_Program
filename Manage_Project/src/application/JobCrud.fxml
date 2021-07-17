@@ -6,7 +6,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+ fx:controller="application.JobCrudController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -16,7 +17,7 @@
                   <Image url="@images/insert.png" />
                </image>
             </ImageView>
-            <Button fx:id="jobbtn_update" layoutX="185.0" layoutY="139.0" mnemonicParsing="false"  prefHeight="106.0" prefWidth="115.0" />
+            <Button fx:id="jobbtn_update" layoutX="185.0" layoutY="139.0" mnemonicParsing="false" onAction="#jobhandleBtnUpdate" prefHeight="106.0" prefWidth="115.0" />
             <ImageView fitHeight="74.0" fitWidth="92.0" layoutX="206.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/update-removebg-preview.png" />

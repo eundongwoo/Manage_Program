@@ -161,6 +161,24 @@ public class DBManager {
 			e.printStackTrace();
 		}
 	}
+	public void job_update(String condition, String newData, String dno) {
+		String sql = "update dept set " + condition +"=? where dno =?";
+		try {
+			PreparedStatement prst = con.prepareStatement(sql);
+			if(condition.equals("dname")) {
+				prst.setString(1, newData);
+				prst.setString(2, dno);
+				prst.executeUpdate();
+			}else {
+				prst.setString(1, newData);
+				prst.setString(2, dno);
+				prst.executeUpdate();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public int Login(Worker worker) {
 		int pass=0;
 		String sql = "select password from worker where eno = ?";
