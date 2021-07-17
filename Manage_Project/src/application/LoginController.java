@@ -50,10 +50,13 @@ public class LoginController implements Initializable {
 			Parent register;
 			Worker worker = new Worker(loginid.getText());
 			int pass = Main.db.Login(worker);
+			
+			
 			if(pass == Integer.parseInt(loginpass.getText()))
 			{
 				System.out.println("로그인 성공");
 				try {
+					Main.db.change_check(worker.getID(),pass);
 					register = FXMLLoader.load(getClass().getResource("Manage.fxml"));
 					Scene scene=new Scene(register);
 					Stage primaryStage=(Stage)btn_register.getScene().getWindow();

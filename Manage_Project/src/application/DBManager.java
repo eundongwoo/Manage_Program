@@ -177,6 +177,56 @@ public class DBManager {
 			e.printStackTrace();
 		}return pass;
 	}
+	public void change_check(String id,int pwd)
+	{
+		String sql="update worker set state=? where eno=? and password=?";
+		try {
+			PreparedStatement prst=con.prepareStatement(sql);
+			prst.setString(1, "1");
+			prst.setInt(2, Integer.parseInt(id));
+			prst.setInt(3, pwd);
+			prst.executeUpdate();
+			System.out.println("로그인!!!!! 상태 완료");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public String user_name()
+	{
+		String sql="select ename from worker where state='1'";
+		String str=null;
+		try {
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery(sql);
+			if(rs.next())
+			{
+				str=rs.getString(1);
+			}
+			
+	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return str;
+	}
+	
+	public void logout()
+	{
+		String sql="update worker set state=0 where state=1";
+		try {
+			Statement st=con.createStatement();
+			st.executeUpdate(sql);
+			System.out.println("로그아웃 완료!");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 	public void job_insert(Job job) {
 		String sql = "insert into dept VALUES(dept_aaa.NEXTVAL,?, ?)";

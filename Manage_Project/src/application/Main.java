@@ -23,8 +23,8 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		db=new DBManager();
-		
 		launch(args);
+		db.logout();
 		
 	}
 
