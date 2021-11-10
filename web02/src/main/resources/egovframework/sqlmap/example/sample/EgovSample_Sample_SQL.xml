@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Sample">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="sampleVo" type="egovframework.sample.service.SampleVO"/>
+
+	<resultMap id="sample" class="egovframework.sample.service.SampleVO">
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="regUser" column="reg_user"/>
+		<result property="content" column="content"/>
+		<result property="regDate" column="reg_date"/>
+	</resultMap>
+
+	<insert id="sampleDAO.insertSample">
+		<![CDATA[
+			INSERT INTO SAMPLE 
+				( ID
+				  , title
+				  , reg_user
+				  , content
+				  , reg_date )
+			VALUES ( #id#
+				  , #title#
+				  , #regUser#
+				  , #content#
+				  , sysdate)
+		]]>
+	</insert>
+	
+	<update id="sampleDAO.updateSample">
+		<![CDATA[
+			UPDATE SAMPLE
+			SET title=#title#
+				, reg_user=#regUser#
+				, content=#content#
+			WHERE ID=#id#
+		]]>
+	</update>
+	
+	<delete id="sampleDAO.deleteSample">
+		<![CDATA[
+			DELETE FROM SAMPLE 
+			WHERE ID=#id#
+		]]>
+	</delete>
+    
+    <select id="sampleDAO.selectSample" resultMap="sample">
+        <![CDATA[
+            SELECT
+                ID, title, reg_user, content, reg_date
+            FROM SAMPLE 
+            WHERE ID=#id#
+        ]]>
+    </select>
+	
+	<select id="sampleDAO.selectSampleList" parameterClass="sampleVo" resultClass="egovMap">
+
+			SELECT
+				ID, title, reg_user, content, reg_date
+			FROM SAMPLE
+			order by id desc
+	</select>
+</sqlMap>
